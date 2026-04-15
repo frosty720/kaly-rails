@@ -96,12 +96,12 @@
           <h3 style="color:var(--teal);margin-bottom:20px;">Validium vs standard rollup</h3>
           <div style="display:flex;flex-direction:column;gap:16px;">
             <div>
-              <div style="font-family:'Space Mono',monospace;font-size:10px;color:#f472b6;letter-spacing:1px;margin-bottom:6px;">STANDARD ROLLUP</div>
+              <div style="font-family:Arial, Helvetica, sans-serif;font-size:10px;color:#f472b6;letter-spacing:1px;margin-bottom:6px;">STANDARD ROLLUP</div>
               <div style="font-size:14px;color:var(--gray-light);line-height:1.6;">Posts compressed transaction data to public L1. Anyone can reconstruct every transfer.</div>
             </div>
             <div style="height:1px;background:var(--border);"></div>
             <div>
-              <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--teal);letter-spacing:1px;margin-bottom:6px;">KALYRAILS VALIDIUM</div>
+              <div style="font-family:Arial, Helvetica, sans-serif;font-size:10px;color:var(--teal);letter-spacing:1px;margin-bottom:6px;">KALYRAILS VALIDIUM</div>
               <div style="font-size:14px;color:var(--gray-light);line-height:1.6;">Posts only the proof and state root to KalyChain. Transaction data stays with you — auditable privately by regulators, invisible to everyone else.</div>
             </div>
             <div style="margin-top:4px;padding-top:16px;border-top:1px solid var(--border);">
@@ -123,70 +123,70 @@
     <div class="diagram-container" style="overflow-x:auto;">
       <svg width="100%" viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg" style="min-width:700px;">
         <!-- Step 1 -->
-        <rect x="20" y="40" width="160" height="80" rx="12" fill="#1a1f3d" stroke="#f472b6" stroke-width="1"/>
-        <text x="100" y="72" text-anchor="middle" fill="#f0f2f8" font-family="DM Sans,sans-serif" font-size="14" font-weight="600">User sends money</text>
-        <text x="100" y="96" text-anchor="middle" fill="#8b92a8" font-family="DM Sans,sans-serif" font-size="11">Via your mobile app</text>
+        <rect x="20" y="40" width="160" height="80" rx="12" fill="#1a1a1a" stroke="#f472b6" stroke-width="1"/>
+        <text x="100" y="72" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600">User sends money</text>
+        <text x="100" y="96" text-anchor="middle" fill="#9ca3af" font-family="Arial, Helvetica, sans-serif" font-size="11">Via your mobile app</text>
 
         <!-- Arrow 1 -->
-        <line x1="180" y1="80" x2="220" y2="80" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowT)"/>
+        <line x1="180" y1="80" x2="220" y2="80" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrowT)"/>
 
         <!-- Step 2 -->
-        <rect x="220" y="40" width="160" height="80" rx="12" fill="#1a1f3d" stroke="#3b82f6" stroke-width="1"/>
-        <text x="300" y="72" text-anchor="middle" fill="#f0f2f8" font-family="DM Sans,sans-serif" font-size="14" font-weight="600">Your backend</text>
-        <text x="300" y="96" text-anchor="middle" fill="#8b92a8" font-family="DM Sans,sans-serif" font-size="11">JSON-RPC call</text>
+        <rect x="220" y="40" width="160" height="80" rx="12" fill="#1a1a1a" stroke="#f59e0b" stroke-width="1"/>
+        <text x="300" y="72" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600">Your backend</text>
+        <text x="300" y="96" text-anchor="middle" fill="#9ca3af" font-family="Arial, Helvetica, sans-serif" font-size="11">JSON-RPC call</text>
 
         <!-- Arrow 2 -->
-        <line x1="380" y1="80" x2="420" y2="80" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowT)"/>
+        <line x1="380" y1="80" x2="420" y2="80" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrowT)"/>
 
         <!-- Step 3 -->
-        <rect x="420" y="20" width="200" height="120" rx="12" fill="#0d1333" stroke="#22d3ee" stroke-width="1"/>
-        <text x="520" y="52" text-anchor="middle" fill="#22d3ee" font-family="Space Mono,monospace" font-size="10" letter-spacing="1.5">ZK CHAIN</text>
-        <text x="520" y="76" text-anchor="middle" fill="#f0f2f8" font-family="DM Sans,sans-serif" font-size="14" font-weight="600">Sequencer executes</text>
-        <text x="520" y="96" text-anchor="middle" fill="#8b92a8" font-family="DM Sans,sans-serif" font-size="11">~1s L2 confirmation</text>
-        <text x="520" y="116" text-anchor="middle" fill="#8b92a8" font-family="DM Sans,sans-serif" font-size="11">Batcher creates batch</text>
+        <rect x="420" y="20" width="200" height="120" rx="12" fill="#0d0d0d" stroke="#22d3ee" stroke-width="1"/>
+        <text x="520" y="52" text-anchor="middle" fill="#22d3ee" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing="1.5">ZK CHAIN</text>
+        <text x="520" y="76" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600">Sequencer executes</text>
+        <text x="520" y="96" text-anchor="middle" fill="#9ca3af" font-family="Arial, Helvetica, sans-serif" font-size="11">~1s L2 confirmation</text>
+        <text x="520" y="116" text-anchor="middle" fill="#9ca3af" font-family="Arial, Helvetica, sans-serif" font-size="11">Batcher creates batch</text>
 
         <!-- Arrow 3 -->
-        <line x1="520" y1="140" x2="520" y2="190" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowT)"/>
+        <line x1="520" y1="140" x2="520" y2="190" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrowT)"/>
 
         <!-- Step 4 -->
-        <rect x="420" y="190" width="200" height="80" rx="12" fill="#1a1f3d" stroke="#c792ea" stroke-width="1"/>
-        <text x="520" y="222" text-anchor="middle" fill="#f0f2f8" font-family="DM Sans,sans-serif" font-size="14" font-weight="600">ZK Prover</text>
-        <text x="520" y="246" text-anchor="middle" fill="#8b92a8" font-family="DM Sans,sans-serif" font-size="11">Generates validity proof</text>
+        <rect x="420" y="190" width="200" height="80" rx="12" fill="#1a1a1a" stroke="#c792ea" stroke-width="1"/>
+        <text x="520" y="222" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600">ZK Prover</text>
+        <text x="520" y="246" text-anchor="middle" fill="#9ca3af" font-family="Arial, Helvetica, sans-serif" font-size="11">Generates validity proof</text>
 
         <!-- Arrow 4 -->
-        <line x1="620" y1="230" x2="680" y2="230" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowT)"/>
+        <line x1="620" y1="230" x2="680" y2="230" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrowT)"/>
 
         <!-- Step 5 -->
-        <rect x="680" y="170" width="220" height="120" rx="12" fill="#0d1333" stroke="#3b82f6" stroke-width="1.5"/>
-        <text x="790" y="202" text-anchor="middle" fill="#3b82f6" font-family="Space Mono,monospace" font-size="10" letter-spacing="1.5">KALYCHAIN L1</text>
-        <text x="790" y="226" text-anchor="middle" fill="#f0f2f8" font-family="DM Sans,sans-serif" font-size="14" font-weight="600">Proof verified on-chain</text>
-        <text x="790" y="250" text-anchor="middle" fill="#8b92a8" font-family="DM Sans,sans-serif" font-size="11">Immutable settlement</text>
-        <text x="790" y="270" text-anchor="middle" fill="#8b92a8" font-family="DM Sans,sans-serif" font-size="11">Costs KLC gas</text>
+        <rect x="680" y="170" width="220" height="120" rx="12" fill="#0d0d0d" stroke="#f59e0b" stroke-width="1.5"/>
+        <text x="790" y="202" text-anchor="middle" fill="#f59e0b" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing="1.5">KALYCHAIN L1</text>
+        <text x="790" y="226" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600">Proof verified on-chain</text>
+        <text x="790" y="250" text-anchor="middle" fill="#9ca3af" font-family="Arial, Helvetica, sans-serif" font-size="11">Immutable settlement</text>
+        <text x="790" y="270" text-anchor="middle" fill="#9ca3af" font-family="Arial, Helvetica, sans-serif" font-size="11">Costs KLC gas</text>
 
         <!-- Side: Explorer -->
-        <rect x="680" y="40" width="220" height="64" rx="10" fill="#1a1f3d" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-        <text x="790" y="66" text-anchor="middle" fill="#f0f2f8" font-family="DM Sans,sans-serif" font-size="13" font-weight="500">Block explorer</text>
-        <text x="790" y="86" text-anchor="middle" fill="#8b92a8" font-family="DM Sans,sans-serif" font-size="11">Audit trail for regulators</text>
+        <rect x="680" y="40" width="220" height="64" rx="10" fill="#1a1a1a" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+        <text x="790" y="66" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="500">Block explorer</text>
+        <text x="790" y="86" text-anchor="middle" fill="#9ca3af" font-family="Arial, Helvetica, sans-serif" font-size="11">Audit trail for regulators</text>
         <line x1="620" y1="60" x2="678" y2="68" stroke="rgba(255,255,255,0.15)" stroke-width="0.5" stroke-dasharray="3 3"/>
 
         <!-- Bottom labels -->
-        <text x="100" y="380" text-anchor="middle" fill="#f472b6" font-family="Space Mono,monospace" font-size="10" letter-spacing="1">USER LAYER</text>
-        <text x="100" y="396" text-anchor="middle" fill="#8b92a8" font-family="DM Sans,sans-serif" font-size="11">No wallets needed</text>
+        <text x="100" y="380" text-anchor="middle" fill="#f472b6" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing="1">USER LAYER</text>
+        <text x="100" y="396" text-anchor="middle" fill="#9ca3af" font-family="Arial, Helvetica, sans-serif" font-size="11">No wallets needed</text>
 
-        <text x="520" y="380" text-anchor="middle" fill="#22d3ee" font-family="Space Mono,monospace" font-size="10" letter-spacing="1">MANAGED BY US</text>
-        <text x="520" y="396" text-anchor="middle" fill="#8b92a8" font-family="DM Sans,sans-serif" font-size="11">You never touch infra</text>
+        <text x="520" y="380" text-anchor="middle" fill="#22d3ee" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing="1">MANAGED BY US</text>
+        <text x="520" y="396" text-anchor="middle" fill="#9ca3af" font-family="Arial, Helvetica, sans-serif" font-size="11">You never touch infra</text>
 
-        <text x="790" y="380" text-anchor="middle" fill="#3b82f6" font-family="Space Mono,monospace" font-size="10" letter-spacing="1">SETTLEMENT LAYER</text>
-        <text x="790" y="396" text-anchor="middle" fill="#8b92a8" font-family="DM Sans,sans-serif" font-size="11">Permanent, tamper-proof</text>
+        <text x="790" y="380" text-anchor="middle" fill="#f59e0b" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing="1">SETTLEMENT LAYER</text>
+        <text x="790" y="396" text-anchor="middle" fill="#9ca3af" font-family="Arial, Helvetica, sans-serif" font-size="11">Permanent, tamper-proof</text>
 
         <!-- Dotted zone borders -->
         <rect x="10" y="15" width="190" height="340" rx="16" fill="none" stroke="rgba(244,114,182,0.12)" stroke-width="0.5" stroke-dasharray="4 4"/>
         <rect x="410" y="15" width="220" height="340" rx="16" fill="none" stroke="rgba(34,211,238,0.12)" stroke-width="0.5" stroke-dasharray="4 4"/>
-        <rect x="670" y="15" width="240" height="340" rx="16" fill="none" stroke="rgba(59,130,246,0.15)" stroke-width="0.5" stroke-dasharray="4 4"/>
+        <rect x="670" y="15" width="240" height="340" rx="16" fill="none" stroke="rgba(245,158,11,0.15)" stroke-width="0.5" stroke-dasharray="4 4"/>
 
         <defs>
           <marker id="arrowT" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </marker>
         </defs>
       </svg>
@@ -215,20 +215,20 @@
         <div class="diagram-container" style="padding:32px;">
           <div style="display:flex;flex-direction:column;gap:12px;">
             <div style="background:var(--navy-card);border:1px solid rgba(244,114,182,0.2);border-radius:10px;padding:20px;">
-              <div style="font-family:'Space Mono',monospace;font-size:10px;color:#f472b6;letter-spacing:1px;margin-bottom:8px;">USER SEES</div>
+              <div style="font-family:Arial, Helvetica, sans-serif;font-size:10px;color:#f472b6;letter-spacing:1px;margin-bottom:8px;">USER SEES</div>
               <div style="font-size:15px;color:var(--white);">Send $5 to Mamadou</div>
               <div style="font-size:13px;color:var(--gray);margin-top:4px;">Tap button → done</div>
             </div>
             <div style="text-align:center;color:var(--teal);font-size:18px;">&#8595;</div>
             <div style="background:var(--navy-card);border:1px solid rgba(34,211,238,0.2);border-radius:10px;padding:20px;">
-              <div style="font-family:'Space Mono',monospace;font-size:10px;color:#22d3ee;letter-spacing:1px;margin-bottom:8px;">YOUR BACKEND DOES</div>
+              <div style="font-family:Arial, Helvetica, sans-serif;font-size:10px;color:#22d3ee;letter-spacing:1px;margin-bottom:8px;">YOUR BACKEND DOES</div>
               <div style="font-size:15px;color:var(--white);">Calls transfer(fromId, toId, amount)</div>
               <div style="font-size:13px;color:var(--gray);margin-top:4px;">Signs with one operator key</div>
               <div style="font-size:13px;color:var(--gray);">Submits to ZK chain RPC</div>
             </div>
             <div style="text-align:center;color:var(--teal);font-size:18px;">&#8595;</div>
             <div style="background:var(--navy-card);border:1px solid var(--teal-border);border-radius:10px;padding:20px;">
-              <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--teal);letter-spacing:1px;margin-bottom:8px;">ON-CHAIN RESULT</div>
+              <div style="font-family:Arial, Helvetica, sans-serif;font-size:10px;color:var(--teal);letter-spacing:1px;margin-bottom:8px;">ON-CHAIN RESULT</div>
               <div style="font-size:15px;color:var(--white);">Immutable transfer record</div>
               <div style="font-size:13px;color:var(--gray);margin-top:4px;">Settled via ZK proof on KalyChain</div>
             </div>
