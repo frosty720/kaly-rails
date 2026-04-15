@@ -1,56 +1,66 @@
 # KalyRails
 
-**Private ZK rollups for mobile money and fintech — settled on KalyChain.**
+**Private blockchain infrastructure for banks and fintechs — built and operated by the team that runs KalyChain.**
 
-KalyRails is a rollup-as-a-service offering that gives fintechs, mobile money operators, and payment processors their own dedicated ZK chain. Each customer runs an isolated, permissioned Layer 2 with zero user-visible gas, sub-second UX, and cryptographic validity proofs anchored to KalyChain — a production EVM Layer 1 already processing real payments in production.
+KalyRails is a two-product infrastructure offering targeting regulated financial institutions in Africa and beyond. One team, one operational foundation, two purpose-built products that solve different problems for different buyers.
 
 This repository contains the source for the KalyRails marketing site ([rails.kalychain.io](https://rails.kalychain.io)).
 
 ---
 
-## What KalyRails delivers
+## The two products
 
-- **Your own chain, not a shared tenant.** One L2 per fintech customer. Your transaction throughput, your fee policy, your compliance rules — no noisy neighbors, no global gas-price shocks.
-- **Zero gas for end users.** The custodial architecture means your users never hold tokens, never sign transactions, and never see a gas fee. Your backend signs on their behalf.
-- **ZK validity proofs, not optimistic fraud windows.** Every batch is mathematically proven before settlement. No 7-day withdrawal delays, no trust assumptions about watchtowers.
-- **KUSD-denominated settlement.** All fees and transfers clear in [KUSD](https://kusd.kalychain.io), KalyChain's over-collateralized stablecoin (a MakerDAO DSS fork). Price-stable accounting without touching volatile assets.
-- **Built on open-source ZK Stack.** The same battle-tested proving system that powers production ZK chains on Ethereum mainnet — but settled on KalyChain for dramatically lower costs and payments-native infrastructure.
-- **Regulator-friendly by design.** Every customer gets a dedicated block explorer for their chain. Auditors and regulators get read-only visibility into every transaction, contract state, and settlement proof.
+### KalyRails L2 — ZK Rollups for Fintech
 
-## Why KalyChain instead of Ethereum
+Private ZK Layer 2 chains for mobile money operators, remittance companies, payment aggregators, and microfinance institutions. Each customer gets a dedicated ZK rollup that settles on KalyChain, with zero user-visible gas, wallet-less custodial UX, and KUSD-denominated settlement. Built on open-source ZK Stack — the same proving system powering production ZK chains on Ethereum mainnet.
 
-Ethereum ZK rollups inherit Ethereum's gas volatility, its trading-first ecosystem, and its cost floor. KalyRails settles on **KalyChain** — a Hyperledger Besu QBFT Layer 1 purpose-built for payments — which means:
+- **Buyer:** Mobile money operators, fintechs, payment processors
+- **Technology:** ZK Stack (validity-proof rollup)
+- **Settlement:** KalyChain L1
+- **UX:** Invisible to end users
+- **Product page:** [`fintech.html`](fintech.html)
 
-- **Proof verification costs a fraction of Ethereum mainnet**, making micro-transactions economically viable at mobile-money ticket sizes.
-- **The surrounding ecosystem is payments-native**: Hyperlane bridge, KalySwap DEX liquidity, on-chain DAO governance, and KUSD stablecoin — all live, all production.
-- **Full-stack ownership** from L1 to L2 means no third-party dependency chain when you need a custom feature, a config change, or priority support.
-- **The same cryptographic security model.** ZK validity proofs are secured by math, not by which chain's name is on the settlement layer.
+### KalyRails Bank — Private Besu Chains for Banks
 
-## Who KalyRails is built for
+Permissioned Hyperledger Besu Proof-of-Authority networks that sit alongside a bank's existing core banking system (Temenos, Flexcube, Finacle) as an invisible fraud-prevention and settlement layer. Smart contracts enforce withdrawal limits, velocity checks, multi-sig thresholds, and branch-level caps in code — making silent mass fraud mathematically impossible even in the face of a full database breach.
 
-- Mobile money operators in emerging markets needing cross-border settlement without correspondent-banking friction
-- Fintechs building wallets, remittance flows, or merchant-payment rails that require deterministic cost and sub-second finality
-- Payment processors that need per-tenant isolation, regulator visibility, and on-chain compliance enforcement
-- Any operator who needs the auditability of a public blockchain with the privacy and control of a private network
+Built on the same Hyperledger Besu technology powering SWIFT's 2026 shared settlement ledger, Nigeria's eNaira CBDC, Brazil's DREX, and Citi Token Services.
+
+- **Buyer:** Commercial banks, central banks, regulated financial institutions
+- **Technology:** Hyperledger Besu (IBFT 2.0 / QBFT PoA)
+- **Crypto exposure:** None — zero token, zero gas, customer PII stays off-chain
+- **Integration:** Drop-in alongside existing core banking
+- **Product page:** [`banking.html`](banking.html)
+
+## Why KalyRails
+
+- **Production operators, not theoretical consultants.** We run KalyChain — a live Layer 1 blockchain — in production every day. Validators, RPC nodes, block explorer, DEX, bridge, stablecoin, on-chain DAO.
+- **Built for Africa.** Headquartered in-region, aligned to BCEAO regulatory requirements, existing customer base on the continent.
+- **Regulator-ready by design.** Every deployment ships with a dedicated block explorer and optional regulator node.
+- **Zero crypto exposure for both products.** No tokens held by customers, no speculative assets, no market volatility touching your balance sheet.
+- **Full-stack capability.** Consensus, smart contracts, APIs, frontends, monitoring, DevOps — end-to-end ownership.
 
 ## About this repository
 
-This repo holds the static marketing site for KalyRails. It is a plain HTML/CSS site with no build step — open `index.html` in a browser, or deploy the directory directly to any static host (Nginx, Cloudflare Pages, Netlify, S3, etc.).
+This is a plain HTML/CSS marketing site with no build step. Open `index.html` in a browser, or deploy the directory directly to any static host (Nginx, Cloudflare Pages, Netlify, S3, etc.).
 
 ```
 site/
-├── index.html         # Landing page
-├── about.html         # About KalyChain — the settlement layer
-├── technology.html    # ZK Stack architecture deep-dive
-├── integrate.html     # Integration guide for fintechs
-├── styles.css         # Shared styles
-├── globals.css        # Reset / base styles
-└── public/            # Logos, favicon, static assets
+├── index.html          # Umbrella landing — dual-product showcase
+├── fintech.html        # KalyRails L2 product page (ZK rollups)
+├── banking.html        # KalyRails Bank product page (private Besu)
+├── about.html          # About KalyChain — the settlement layer
+├── technology.html     # ZK Stack architecture deep-dive
+├── integrate.html      # Integration guide for fintechs
+├── styles.css          # Shared styles (KUSD design system)
+├── globals.css         # Reset / base styles
+└── public/             # Logos, favicon, static assets
 ```
 
 ## Contact
 
-Interested in running a ZK rollup for your fintech? **[info@kalychain.io](mailto:info@kalychain.io)**
+- Fintech enquiries (KalyRails L2): **[info@kalychain.io](mailto:info@kalychain.io?subject=KalyRails%20L2%20Enquiry)**
+- Banking enquiries (KalyRails Bank): **[info@kalychain.io](mailto:info@kalychain.io?subject=KalyRails%20Bank%20Enquiry)**
 
 Learn more:
 
@@ -60,4 +70,4 @@ Learn more:
 
 ---
 
-© 2026 KalyChain. KalyRails L2s are powered by open-source ZK Stack, settling on KalyChain — a Hyperledger Besu QBFT Layer 1.
+© 2026 KalyChain. KalyRails L2 is powered by open-source ZK Stack. KalyRails Bank is powered by Hyperledger Besu. Both settle on KalyChain — a Hyperledger Besu QBFT Layer 1.
