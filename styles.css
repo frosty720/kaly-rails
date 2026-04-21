@@ -499,3 +499,35 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   Language switcher (EN · FR) in nav
+   ============================================================ */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.lang-switch a {
+  color: var(--gray-light);
+  text-decoration: none;
+  padding: 2px 2px;
+  transition: color 0.2s;
+}
+.lang-switch a:hover { color: var(--gold); }
+.lang-switch a.active { color: var(--gold); }
+.lang-switch span { color: var(--border-hover); }
+
+@media (max-width: 900px) {
+  .lang-switch {
+    justify-content: center;
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border);
+    gap: 10px;
+    font-size: 14px;
+  }
+  .lang-switch a { padding: 4px 10px; }
+}

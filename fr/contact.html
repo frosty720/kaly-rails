@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — KalyRails</title>
+<link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+<link rel="stylesheet" href="/styles.css?v=3">
+<link rel="alternate" hreflang="en" href="/en/contact.html">
+<link rel="alternate" hreflang="fr" href="/fr/contact.html">
+<link rel="alternate" hreflang="x-default" href="/en/contact.html">
+<script src="/scripts.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="index.html" class="logo"><img src="/public/klc.png" alt="KalyChain">Kaly<span>Rails</span></a>
+    <div class="nav-links">
+      <a href="fintech.html">Fintech</a>
+      <a href="banking.html">Banque</a>
+      <a href="technology.html">Technologie</a>
+      <a href="integrate.html">Intégration</a>
+      <span class="lang-switch"><a href="/en/contact.html" onclick="localStorage.setItem('lang','en')">EN</a><span>·</span><a href="/fr/contact.html" class="active" onclick="localStorage.setItem('lang','fr')">FR</a></span>
+      <a href="contact.html" class="cta-nav">Commencer</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero" style="padding:160px 0 60px;text-align:center;">
+  <div class="container">
+    <div class="hero-tag">Contactez-nous</div>
+    <h1 style="max-width:600px;margin:0 auto 16px;">Construisons quelque chose <em>ensemble</em></h1>
+    <p style="max-width:480px;margin:0 auto;">Parlez-nous de votre projet et nous reviendrons vers vous dans un jour ouvré.</p>
+  </div>
+</section>
+
+<section style="padding:0 0 120px;position:relative;">
+  <div style="position:absolute;bottom:0;left:0;right:0;height:300px;background:radial-gradient(ellipse 60% 80% at 50% 100%,rgba(245,158,11,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="container">
+    <div class="form-card" id="contact-form-card">
+      <form id="contact-form" action="https://formkeep.com/f/aea2a1bd892a" accept-charset="UTF-8" enctype="multipart/form-data" method="POST">
+        <input type="hidden" name="utf8" value="&#x2713;">
+        <input type="hidden" name="lang" value="fr">
+        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+          <label for="honeypot">Ne pas remplir</label>
+          <input type="text" id="honeypot" name="honeypot" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="name">Nom complet *</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Aïcha Diallo" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email professionnel *</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="aicha@entreprise.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="company">Entreprise *</label>
+            <input class="form-input" type="text" id="company" name="company" placeholder="Acme Fintech" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="role">Fonction</label>
+            <input class="form-input" type="text" id="role" name="role" placeholder="CTO">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="interest">Je suis intéressé(e) par *</label>
+          <select class="form-select" id="interest" name="interest" required>
+            <option value="" disabled selected>Sélectionnez une option</option>
+            <option value="KalyRails L2 (Fintech)">KalyRails L2 (Fintech)</option>
+            <option value="KalyRails Bank">KalyRails Bank</option>
+            <option value="Both">Les deux</option>
+            <option value="Other">Autre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="message">Message *</label>
+          <textarea class="form-textarea" id="message" name="message" placeholder="Parlez-nous de votre cas d'usage..." required></textarea>
+        </div>
+
+        <div class="form-error-banner" id="form-error">
+          Une erreur est survenue. Veuillez réessayer ou nous écrire à <a href="mailto:info@kalychain.io" style="color:#fca5a5;text-decoration:underline;">info@kalychain.io</a>.
+        </div>
+
+        <div style="text-align:center;">
+          <button type="submit" class="btn-primary" id="submit-btn" style="padding:16px 48px;font-size:16px;">Envoyer la demande</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="display:inline-block;margin-bottom:4px;">Kaly<span>Rails</span></a>
+        <p>Infrastructure blockchain privée pour fintechs et banques. Construite sur KalyChain.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="fintech.html">KalyRails L2</a>
+        <a href="banking.html">KalyRails Bank</a>
+        <a href="technology.html">Technologie</a>
+        <a href="integrate.html">Intégration</a>
+      </div>
+      <div class="footer-col">
+        <h4>Entreprise</h4>
+        <a href="about.html">À propos de KalyChain</a>
+        <a href="https://kalychain.io" target="_blank">KalyChain.io</a>
+        <a href="https://kalyssi.com" target="_blank">Kalyssi</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="contact.html">Nous contacter</a>
+        <a href="contact.html">Commencer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 <a href="https://kalychain.io">KalyChain</a>. KalyRails L2 fonctionne sur ZK Stack open-source. KalyRails Bank fonctionne sur Hyperledger Besu. Les deux se règlent sur KalyChain — une Layer 1 Hyperledger Besu QBFT.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  var card = document.getElementById('contact-form-card');
+  var errorBanner = document.getElementById('form-error');
+  var submitBtn = document.getElementById('submit-btn');
+
+  var params = new URLSearchParams(window.location.search);
+  var type = params.get('type');
+  if (type) {
+    var select = document.getElementById('interest');
+    var map = {
+      fintech: 'KalyRails L2 (Fintech)',
+      banking: 'KalyRails Bank'
+    };
+    if (map[type]) {
+      select.value = map[type];
+    }
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    errorBanner.classList.remove('visible');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi…';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error(res.status);
+        card.innerHTML =
+          '<div class="form-success">' +
+          '<h3>Merci !</h3>' +
+          '<p>Nous vous recontacterons dans un jour ouvré.</p>' +
+          '<a href="index.html" class="btn-secondary">Retour à l\'accueil</a>' +
+          '</div>';
+      })
+      .catch(function () {
+        errorBanner.classList.add('visible');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Envoyer la demande';
+      });
+  });
+})();
+</script>
+
+</body>
+</html>

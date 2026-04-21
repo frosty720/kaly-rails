@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integration Guide — KalyRails</title>
+<link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+<link rel="stylesheet" href="/styles.css?v=3">
+<link rel="alternate" hreflang="en" href="/en/integrate.html">
+<link rel="alternate" hreflang="fr" href="/fr/integrate.html">
+<link rel="alternate" hreflang="x-default" href="/en/integrate.html">
+<script src="/scripts.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="index.html" class="logo"><img src="/public/klc.png" alt="KalyChain">Kaly<span>Rails</span></a>
+    <div class="nav-links">
+      <a href="fintech.html">Fintech</a>
+      <a href="banking.html">Banking</a>
+      <a href="technology.html">Technology</a>
+      <a href="integrate.html" class="active">Integration</a>
+      <a href="about.html">About</a>
+      <span class="lang-switch"><a href="/en/integrate.html" class="active" onclick="localStorage.setItem('lang','en')">EN</a><span>·</span><a href="/fr/integrate.html" onclick="localStorage.setItem('lang','fr')">FR</a></span>
+      <a href="contact.html" class="cta-nav">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-tag">Integration</span>
+    <h1>Connect your existing backend in <em>hours, not months</em></h1>
+    <p>Your fintech app already works. KalyRails doesn't replace your stack — it slides in underneath as an invisible settlement layer. Here's how.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-tag">The concept</span>
+    <h2 style="margin-bottom:24px;">Nothing changes for your users or your app</h2>
+    <div class="grid-2" style="margin-bottom:40px;">
+      <div>
+        <p style="font-size:17px;color:var(--gray-light);line-height:1.9;">
+          KalyRails exposes a standard <strong style="color:var(--white);">JSON-RPC endpoint</strong> — the same interface used by every Ethereum-compatible service in the world. If your team has ever called a REST API, you can integrate with KalyRails.
+        </p>
+        <p style="font-size:17px;color:var(--gray-light);line-height:1.9;margin-top:16px;">
+          Your backend becomes the bridge between your users and the blockchain. When a user initiates a transfer, your server calls our RPC, and the transaction is recorded on your private ZK chain. The user never knows blockchain is involved.
+        </p>
+        <p style="font-size:17px;color:var(--gray-light);line-height:1.9;margin-top:16px;">
+          You can integrate using <strong style="color:var(--white);">any language</strong> — JavaScript, Python, Java, Go, PHP, Ruby. If it can make an HTTP request, it can talk to KalyRails.
+        </p>
+      </div>
+      <div>
+        <div class="card" style="background:var(--navy-card);">
+          <h3 style="color:var(--teal);margin-bottom:20px;">What you need</h3>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:var(--teal);width:24px;">01</div>
+              <div style="font-size:15px;color:var(--gray-light);">Your RPC endpoint URL (we provide this)</div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:var(--teal);width:24px;">02</div>
+              <div style="font-size:15px;color:var(--gray-light);">Operator signing key (we generate and secure this together)</div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:var(--teal);width:24px;">03</div>
+              <div style="font-size:15px;color:var(--gray-light);">An HTTP client in your backend (you already have one)</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">
+            <div style="font-size:13px;color:var(--gray);">Average integration time</div>
+            <div style="font-family:Arial, Helvetica, sans-serif;font-size:24px;font-weight:700;color:var(--teal);">1–3 days</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-tag">Step by step</span>
+    <h2 style="margin-bottom:48px;">Connecting your backend</h2>
+
+    <div style="margin-bottom:48px;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;font-weight:700;color:var(--navy);background:var(--teal);width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;">01</div>
+        <h3 style="font-size:22px;">Connect with your operator wallet</h3>
+      </div>
+      <p style="font-size:16px;color:var(--gray-light);max-width:680px;margin-bottom:20px;">
+        You operate one custodial signing wallet on your KalyRails chain — nothing more. Your users have no wallets, no addresses, no keys. User balances and history live inside the mobile money smart contract, keyed by your existing user IDs from your own database.
+      </p>
+      <div class="code-block">
+<span class="comment">// Load your operator signing wallet (secure it like any API secret)</span>
+<span class="keyword">const</span> { ethers } = <span class="func">require</span>(<span class="string">'ethers'</span>);
+
+<span class="keyword">const</span> provider = <span class="keyword">new</span> ethers.<span class="func">JsonRpcProvider</span>(
+  <span class="string">'https://your-chain.kalyrails.io/rpc'</span>  <span class="comment">// We provide this</span>
+);
+
+<span class="keyword">const</span> operatorWallet = <span class="keyword">new</span> ethers.<span class="func">Wallet</span>(
+  process.env.<span class="string">KALYRAILS_OPERATOR_KEY</span>,
+  provider
+);
+
+<span class="comment">// Connect to the mobile money contract (address provided at onboarding)</span>
+<span class="keyword">const</span> mobileMoney = <span class="keyword">new</span> ethers.<span class="func">Contract</span>(
+  MOBILE_MONEY_CONTRACT,
+  abi,
+  operatorWallet
+);
+      </div>
+    </div>
+
+    <div style="margin-bottom:48px;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;font-weight:700;color:var(--navy);background:var(--teal);width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;">02</div>
+        <h3 style="font-size:22px;">Submit transfers by user ID</h3>
+      </div>
+      <p style="font-size:16px;color:var(--gray-light);max-width:680px;margin-bottom:20px;">
+        When a user initiates a transfer, your backend calls the mobile money contract directly with the sender and recipient's user IDs from your own database. The contract validates limits, deducts a KUSD fee to your revenue treasury, and records the transfer immutably — all in one transaction signed by your operator wallet.
+      </p>
+      <div class="code-block">
+<span class="keyword">async function</span> <span class="func">sendTransfer</span>(fromUserId, toUserId, amountMinorUnits) {
+  <span class="comment">// Call the custodial transfer function.</span>
+  <span class="comment">// The operator wallet is the only signer — your user IDs are the arguments.</span>
+  <span class="keyword">const</span> tx = <span class="keyword">await</span> mobileMoney.<span class="func">transfer</span>(
+    fromUserId,     <span class="comment">// your internal user ID (uint256)</span>
+    toUserId,       <span class="comment">// your internal user ID (uint256)</span>
+    amountMinorUnits <span class="comment">// amount in smallest unit (e.g. cents)</span>
+  );
+  <span class="keyword">const</span> receipt = <span class="keyword">await</span> tx.<span class="func">wait</span>();
+
+  <span class="comment">// Store the on-chain hash as immutable proof of the transfer</span>
+  <span class="keyword">return</span> {
+    txHash: receipt.hash,
+    blockNumber: receipt.blockNumber,
+    feeCollected: receipt.logs <span class="comment">/* KUSDFee event */</span>
+  };
+}
+
+<span class="comment">// In your existing transfer endpoint:</span>
+app.<span class="func">post</span>(<span class="string">'/transfer'</span>, <span class="keyword">async</span> (req, res) => {
+  <span class="keyword">const</span> { fromUserId, toUserId, amount } = req.body;
+  <span class="keyword">const</span> proof = <span class="keyword">await</span> <span class="func">sendTransfer</span>(fromUserId, toUserId, amount);
+  <span class="keyword">await</span> db.<span class="func">saveTransferProof</span>(req.body.transferRef, proof.txHash);
+  res.<span class="func">json</span>({ success: <span class="keyword">true</span>, proof });
+});
+      </div>
+    </div>
+
+    <div style="margin-bottom:48px;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;font-weight:700;color:var(--navy);background:var(--teal);width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;">03</div>
+        <h3 style="font-size:22px;">Query balances and history by user ID</h3>
+      </div>
+      <p style="font-size:16px;color:var(--gray-light);max-width:680px;margin-bottom:20px;">
+        User balances live inside the mobile money contract as a mapping from your user ID to a balance. Read them directly with a view call, or use the block explorer's API for richer queries and regulator-ready audit trails.
+      </p>
+      <div class="code-block">
+<span class="comment">// Check a user's balance directly on-chain</span>
+<span class="keyword">const</span> balance = <span class="keyword">await</span> mobileMoney.<span class="func">balanceOf</span>(userId);
+
+<span class="comment">// Or use the Explorer API for transaction history by user ID</span>
+<span class="keyword">const</span> history = <span class="keyword">await</span> <span class="func">fetch</span>(
+  <span class="string">`https://explorer.kalyrails.io/api/user/${userId}/transfers`</span>
+);
+<span class="keyword">const</span> txns = <span class="keyword">await</span> history.<span class="func">json</span>();
+
+<span class="comment">// Display in your app — users see their normal transaction list</span>
+txns.items.<span class="func">forEach</span>(tx => {
+  <span class="func">renderTransaction</span>({
+    amount: tx.amount,
+    counterparty: <span class="func">resolveUserName</span>(tx.counterpartyUserId),
+    date: tx.timestamp,
+    status: tx.confirmed ? <span class="string">'complete'</span> : <span class="string">'pending'</span>,
+    blockchainProof: tx.txHash  <span class="comment">// For regulator-verifiable audit</span>
+  });
+});
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-tag">Compatibility</span>
+    <h2 style="margin-bottom:24px;">Works with any backend stack</h2>
+    <p style="font-size:17px;color:var(--gray-light);max-width:640px;margin-bottom:40px;">KalyRails uses the standard Ethereum JSON-RPC interface. Every major language has libraries ready to go.</p>
+    <div class="grid-3">
+      <div class="card" style="text-align:center;">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:24px;color:var(--teal);margin-bottom:12px;">JS</div>
+        <h3>JavaScript / Node.js</h3>
+        <p>ethers.js, web3.js, viem</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:24px;color:#f59e0b;margin-bottom:12px;">PY</div>
+        <h3>Python</h3>
+        <p>web3.py, brownie</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:24px;color:#f78c6c;margin-bottom:12px;">&#9758;</div>
+        <h3>Java / Kotlin</h3>
+        <p>web3j</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:24px;color:#c792ea;margin-bottom:12px;">GO</div>
+        <h3>Go</h3>
+        <p>go-ethereum (geth)</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:24px;color:#82aaff;margin-bottom:12px;">PH</div>
+        <h3>PHP</h3>
+        <p>web3.php</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:24px;color:#ffcb6b;margin-bottom:12px;">&#128312;</div>
+        <h3>Any language</h3>
+        <p>Raw HTTP/JSON-RPC calls</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-tag">What you get</span>
+    <h2 style="margin-bottom:24px;">Every integration includes</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Pre-built smart contracts</h3>
+        <p>Mobile money transfer contracts, agent commission contracts, merchant settlement contracts — battle-tested and auditable. Handles 80% of use cases out of the box. Custom contracts available for Growth and Enterprise plans.</p>
+      </div>
+      <div class="card">
+        <h3>SDK and code examples</h3>
+        <p>Ready-to-use code samples in JavaScript, Python, and Java showing exactly how to map users, submit transfers, query balances, and handle events. Copy, paste, adapt to your stack.</p>
+      </div>
+      <div class="card">
+        <h3>Testnet environment</h3>
+        <p>A full staging chain where you can test your integration without affecting production. Same API, same contracts, same behavior — but with test tokens so nothing real is at risk.</p>
+      </div>
+      <div class="card">
+        <h3>Integration support</h3>
+        <p>Our engineering team walks you through the integration. We review your code, answer questions, and help debug. Most integrations go from first API call to production in 1-3 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-tag">Common questions</span>
+    <h2 style="margin-bottom:40px;">Integration FAQ</h2>
+    <div style="max-width:720px;">
+      <div style="padding:24px 0;border-bottom:1px solid var(--border);">
+        <h3 style="margin-bottom:8px;">Do we need blockchain developers on our team?</h3>
+        <p style="color:var(--gray);font-size:15px;">No. If your team can make HTTP API calls, they can integrate with KalyRails. The RPC interface is identical to any REST API. Smart contract development and blockchain infrastructure is entirely handled by us.</p>
+      </div>
+      <div style="padding:24px 0;border-bottom:1px solid var(--border);">
+        <h3 style="margin-bottom:8px;">What if our backend is in a language you didn't list?</h3>
+        <p style="color:var(--gray);font-size:15px;">KalyRails uses standard JSON-RPC over HTTP. If your language can send an HTTP POST request with a JSON body, it can talk to KalyRails. No special libraries required.</p>
+      </div>
+      <div style="padding:24px 0;border-bottom:1px solid var(--border);">
+        <h3 style="margin-bottom:8px;">Can we run alongside our existing database?</h3>
+        <p style="color:var(--gray);font-size:15px;">Absolutely. Most clients keep their existing database for user management, KYC, app state, etc. and add KalyRails as the settlement layer. Your database remains your source of truth for app logic — the blockchain adds immutable proof of every financial transaction.</p>
+      </div>
+      <div style="padding:24px 0;border-bottom:1px solid var(--border);">
+        <h3 style="margin-bottom:8px;">What happens if the ZK chain goes down?</h3>
+        <p style="color:var(--gray);font-size:15px;">Your app continues working. You can queue transactions locally and submit them when the chain recovers. All data is also stored in a managed PostgreSQL database with automated backups. Our SLA guarantees 99.9% uptime on Growth and Enterprise plans.</p>
+      </div>
+      <div style="padding:24px 0;">
+        <h3 style="margin-bottom:8px;">How do USSD-based apps integrate?</h3>
+        <p style="color:var(--gray);font-size:15px;">USSD interfaces talk to your backend server, which talks to KalyRails via JSON-RPC. The integration point is your backend — not the user's phone. Whether your users are on a smartphone app, USSD, or even SMS, the blockchain integration is the same.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:100px 0;text-align:center;">
+  <div class="container">
+    <h2>Ready to <em>plug in?</em></h2>
+    <p style="font-size:17px;color:var(--gray-light);max-width:460px;margin:0 auto 36px;">Get your testnet credentials and start integrating today. Most teams go live in under a week.</p>
+    <a href="contact.html" class="btn-primary" style="padding:18px 48px;font-size:17px;">Request access</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo" style="display:inline-block;margin-bottom:4px;">Kaly<span>Rails</span></a><p>Private blockchain infrastructure for mobile money and fintech. Built on KalyChain.</p></div>
+      <div class="footer-col"><h4>Solutions</h4><a href="fintech.html">KalyRails L2</a><a href="banking.html">KalyRails Bank</a><a href="technology.html">Technology</a><a href="integrate.html">Integration</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About KalyChain</a><a href="https://kalychain.io" target="_blank">KalyChain.io</a><a href="https://kalyssi.com" target="_blank">Kalyssi</a></div>
+      <div class="footer-col"><h4>Connect</h4><a href="contact.html">Contact us</a><a href="contact.html">Request demo</a></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 <a href="https://kalychain.io">KalyChain</a>. KalyRails L2s are powered by open-source ZK Stack, settling on KalyChain — a Hyperledger Besu QBFT Layer 1.</div>
+  </div>
+</footer>
+
+</body>
+</html>

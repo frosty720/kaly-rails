@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KalyRails Bank — Chaînes Besu privées pour banques commerciales</title>
+<link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+<link rel="stylesheet" href="/styles.css?v=3">
+<link rel="alternate" hreflang="en" href="/en/banking.html">
+<link rel="alternate" hreflang="fr" href="/fr/banking.html">
+<link rel="alternate" hreflang="x-default" href="/en/banking.html">
+<script src="/scripts.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="index.html" class="logo"><img src="/public/klc.png" alt="KalyChain">Kaly<span>Rails</span></a>
+    <div class="nav-links">
+      <a href="fintech.html">Fintech</a>
+      <a href="banking.html" class="active">Banque</a>
+      <a href="technology.html">Technologie</a>
+      <a href="integrate.html">Intégration</a>
+      <span class="lang-switch"><a href="/en/banking.html" onclick="localStorage.setItem('lang','en')">EN</a><span>·</span><a href="/fr/banking.html" class="active" onclick="localStorage.setItem('lang','fr')">FR</a></span>
+      <a href="contact.html?type=banking" class="cta-nav">Contacter les ventes</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero" style="padding: 160px 0 100px;">
+  <div class="container">
+    <div class="hero-tag">KalyRails Bank · Hyperledger Besu</div>
+    <h1>Stoppez la fraude de masse silencieuse. <em>Avant</em> qu'elle n'arrive.</h1>
+    <p style="margin-bottom: 44px;">Une blockchain Hyperledger Besu à permissions qui s'intègre à votre système bancaire central comme une infrastructure de sécurité invisible. Zéro crypto. Aucun changement visible pour le client. La preuve mathématique que chaque retrait a été autorisé.</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="contact.html?type=banking" class="btn-primary">Contacter les ventes</a>
+      <a href="#architecture" class="btn-secondary">Voir comment ça marche</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-tag">La menace</span>
+    <h2 style="margin-bottom:24px;">Une nuit. 3 421 retraits frauduleux. <em>1,14 milliard de FCFA envolés.</em></h2>
+    <p style="font-size:17px;color:var(--gray-light);max-width:720px;line-height:1.9;margin-bottom:48px;">
+      Lors d'un incident récent et largement rapporté dans une grande banque d'Afrique de l'Ouest, des attaquants ont compromis la base de données centralisée, hérité des contrôles d'accès internes et exécuté silencieusement des milliers de retraits coordonnés à travers les agences du pays en une seule nuit. Aucune détection d'anomalie en temps réel ne s'est déclenchée. La piste d'audit était rétrospective — les pertes étaient comptabilisées des heures avant que quiconque ne s'en aperçoive.
+    </p>
+    <div class="grid-3">
+      <div class="card">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:36px;font-weight:700;color:var(--gold);margin-bottom:8px;">1,14 Md</div>
+        <div style="font-size:14px;color:var(--gray-light);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;">FCFA détournés</div>
+        <p>Pertes directes dans un seul incident, attribuées à une fraude de retrait coordonnée entre agences.</p>
+      </div>
+      <div class="card" style="animation-delay:0.1s">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:36px;font-weight:700;color:var(--gold);margin-bottom:8px;">3 421</div>
+        <div style="font-size:14px;color:var(--gray-light);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;">Retraits frauduleux</div>
+        <p>Exécutés simultanément dans plusieurs agences. Aucun n'a été bloqué en temps réel.</p>
+      </div>
+      <div class="card" style="animation-delay:0.2s">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:36px;font-weight:700;color:var(--gold);margin-bottom:8px;">1 nuit</div>
+        <div style="font-size:14px;color:var(--gray-light);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;">Durée totale de l'attaque</div>
+        <p>Liée à un réseau cybercriminel international opérant à l'échelle transfrontalière.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-tag">Pourquoi c'est arrivé</span>
+    <h2 style="margin-bottom:48px;">La banque traditionnelle a des points uniques de défaillance</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="margin-bottom:16px;color:#ef4444;">Architecture traditionnelle</h3>
+        <ul style="list-style:none;padding:0;">
+          <li style="padding:10px 0;border-bottom:1px solid var(--border);color:var(--gray-light);font-size:15px;">✕&nbsp;&nbsp;Base de données centralisée — une violation = accès total</li>
+          <li style="padding:10px 0;border-bottom:1px solid var(--border);color:var(--gray-light);font-size:15px;">✕&nbsp;&nbsp;Contrôles d'accès internes hérités par les attaquants</li>
+          <li style="padding:10px 0;border-bottom:1px solid var(--border);color:var(--gray-light);font-size:15px;">✕&nbsp;&nbsp;Les enregistrements de transaction peuvent être altérés silencieusement</li>
+          <li style="padding:10px 0;border-bottom:1px solid var(--border);color:var(--gray-light);font-size:15px;">✕&nbsp;&nbsp;Aucune visibilité en temps réel des anomalies inter-agences</li>
+          <li style="padding:10px 0;color:var(--gray-light);font-size:15px;">✕&nbsp;&nbsp;Les pistes d'audit sont rétrospectives, pas préventives</li>
+        </ul>
+      </div>
+      <div class="card" style="border-color:var(--gold-border);">
+        <h3 style="margin-bottom:16px;color:var(--gold);">Architecture KalyRails Bank</h3>
+        <ul style="list-style:none;padding:0;">
+          <li style="padding:10px 0;border-bottom:1px solid var(--border);color:var(--gray-light);font-size:15px;">✓&nbsp;&nbsp;Registre distribué — aucun point unique de compromission</li>
+          <li style="padding:10px 0;border-bottom:1px solid var(--border);color:var(--gray-light);font-size:15px;">✓&nbsp;&nbsp;Signature cryptographique requise par transaction</li>
+          <li style="padding:10px 0;border-bottom:1px solid var(--border);color:var(--gray-light);font-size:15px;">✓&nbsp;&nbsp;Enregistrements immuables — l'altération est mathématiquement impossible</li>
+          <li style="padding:10px 0;border-bottom:1px solid var(--border);color:var(--gray-light);font-size:15px;">✓&nbsp;&nbsp;Visibilité en temps réel des transactions sur tout le réseau</li>
+          <li style="padding:10px 0;color:var(--gray-light);font-size:15px;">✓&nbsp;&nbsp;Les contrats intelligents appliquent les règles automatiquement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-tag">La solution</span>
+    <h2 style="margin-bottom:24px;">Un réseau Hyperledger Besu à permissions, <em>conçu pour la banque</em></h2>
+    <p style="font-size:17px;color:var(--gray-light);max-width:720px;line-height:1.9;margin-bottom:48px;">
+      KalyRails Bank déploie une blockchain privée Proof-of-Authority construite sur Hyperledger Besu — la même technologie qui alimente le nouveau registre de règlement partagé de SWIFT et la CBDC eNaira du Nigéria. Il s'intègre à votre système bancaire central existant (Temenos, Flexcube, Finacle ou équivalent) et applique les règles de retrait dans le code.
+    </p>
+    <div class="grid-2">
+      <div class="card">
+        <div class="icon-box">&#128274;</div>
+        <h3>Accès à permissions</h3>
+        <p>Seuls les nœuds validateurs autorisés peuvent participer. Chaque transaction requiert une signature cryptographique — pas d'accès anonyme, pas moyen de falsifier une autorisation à partir d'une simple violation de base de données.</p>
+      </div>
+      <div class="card" style="animation-delay:0.1s">
+        <div class="icon-box">&#9881;</div>
+        <h3>Consensus IBFT 2.0 / QBFT</h3>
+        <p>Consensus Proof-of-Authority avec finalité d'environ 2 secondes, faible latence et identités de validateurs connues. Conçu pour la banque régulée — pas pour la spéculation crypto publique.</p>
+      </div>
+      <div class="card" style="animation-delay:0.2s">
+        <div class="icon-box">&#128737;</div>
+        <h3>Garde-fous par contrats intelligents</h3>
+        <p>Limites de retrait, contrôles de vélocité, seuils d'approbation multi-signature et plafonds de dépenses par agence — appliqués dans le code, impossibles à contourner depuis la couche informatique.</p>
+      </div>
+      <div class="card" style="animation-delay:0.3s">
+        <div class="icon-box">&#128065;</div>
+        <h3>Surveillance en temps réel</h3>
+        <p>Chaque transaction d'agence est visible sur l'ensemble du réseau en temps réel. Les schémas d'anomalie déclenchent des gels automatiques au niveau du contrat — avant que les pertes ne soient comptabilisées, pas après.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="architecture">
+  <div class="container">
+    <span class="section-tag">Architecture</span>
+    <h2 style="margin-bottom:48px;">Couche de sécurité à brancher sur votre pile existante</h2>
+    <div class="diagram-container">
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:var(--navy-mid);border:1px solid var(--border);border-radius:12px;padding:20px 24px;">
+          <div style="font-size:11px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;font-weight:700;">Système bancaire central existant</div>
+          <div style="font-size:14px;color:var(--gray-light);line-height:1.7;">Temenos &nbsp;·&nbsp; Flexcube &nbsp;·&nbsp; Finacle &nbsp;·&nbsp; Bases de données clients &nbsp;·&nbsp; GAB/TPE &nbsp;·&nbsp; Messagerie SWIFT</div>
+        </div>
+        <div style="text-align:center;color:var(--gold);font-size:20px;">&#8595;</div>
+        <div style="background:var(--navy-mid);border:1px solid var(--border);border-radius:12px;padding:20px 24px;">
+          <div style="font-size:11px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;font-weight:700;">Couche API et intégration</div>
+          <div style="font-size:14px;color:var(--gray-light);line-height:1.7;">API JSON-RPC &nbsp;·&nbsp; Middleware Web3 &nbsp;·&nbsp; Listeners d'événements &nbsp;·&nbsp; Flux d'oracle</div>
+        </div>
+        <div style="text-align:center;color:var(--gold);font-size:20px;">&#8595;</div>
+        <div style="background:var(--navy-mid);border:1px solid var(--border);border-radius:12px;padding:20px 24px;">
+          <div style="font-size:11px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;font-weight:700;">Couche contrats intelligents</div>
+          <div style="font-size:14px;color:var(--gray-light);line-height:1.7;">Limites de retrait &nbsp;·&nbsp; Contrôles de vélocité &nbsp;·&nbsp; Multi-signature &nbsp;·&nbsp; Gel/pause &nbsp;·&nbsp; Journalisation d'audit</div>
+        </div>
+        <div style="text-align:center;color:var(--gold);font-size:20px;">&#8595;</div>
+        <div style="background:linear-gradient(170deg,var(--navy-mid) 0%,var(--navy-light) 100%);border:1px solid var(--gold-border);border-radius:12px;padding:24px;">
+          <div style="font-size:11px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;font-weight:700;">Hyperledger Besu — Réseau Proof of Authority (IBFT 2.0)</div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;">
+            <div style="background:var(--navy);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;font-size:12px;color:var(--gray-light);">Validateur Siège</div>
+            <div style="background:var(--navy);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;font-size:12px;color:var(--gray-light);">Région 1</div>
+            <div style="background:var(--navy);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;font-size:12px;color:var(--gray-light);">Région 2</div>
+            <div style="background:var(--navy);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;font-size:12px;color:var(--gray-light);">Nœud régulateur</div>
+            <div style="background:var(--navy);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;font-size:12px;color:var(--gray-light);">Reprise après sinistre</div>
+          </div>
+          <div style="font-size:12px;color:var(--gray);margin-top:14px;text-align:center;">À permissions — seuls les validateurs connus peuvent rejoindre</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-tag">Comment ça marche</span>
+    <h2 style="margin-bottom:48px;">Chaque retrait, validé on-chain avant le mouvement de fonds</h2>
+    <div class="grid-2">
+      <div class="card">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:var(--gold);font-weight:700;margin-bottom:8px;">ÉTAPE 01</div>
+        <h3 style="margin-bottom:12px;">Le client initie un retrait</h3>
+        <p>La demande arrive par votre canal existant : GAB, TPE ou banque mobile. Aucun changement pour le client — il utilise la même carte, la même appli, le même code PIN.</p>
+      </div>
+      <div class="card">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:var(--gold);font-weight:700;margin-bottom:8px;">ÉTAPE 02</div>
+        <h3 style="margin-bottom:12px;">L'API traduit en transaction on-chain</h3>
+        <p>La couche d'intégration crée une transaction blockchain portant le montant, l'ID d'agence et les paramètres client — signée cryptographiquement par votre clé opérationnelle.</p>
+      </div>
+      <div class="card">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:var(--gold);font-weight:700;margin-bottom:8px;">ÉTAPE 03</div>
+        <h3 style="margin-bottom:12px;">Validation par contrat intelligent</h3>
+        <p>Les règles on-chain vérifient : la limite quotidienne n'est pas dépassée ? La vélocité est normale ? Une approbation multi-signature est-elle nécessaire ? Le plafond d'agence est-il correct ? Si <em>n'importe quelle</em> vérification échoue, la transaction est rejetée avant le consensus.</p>
+      </div>
+      <div class="card">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:var(--gold);font-weight:700;margin-bottom:8px;">ÉTAPE 04</div>
+        <h3 style="margin-bottom:12px;">Consensus PoA et finalité</h3>
+        <p>Les nœuds validateurs (siège + régions) confirment la transaction. Un accord des 2/3 des validateurs est requis. Finalisé en environ 2 secondes.</p>
+      </div>
+      <div class="card">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:var(--gold);font-weight:700;margin-bottom:8px;">ÉTAPE 05</div>
+        <h3 style="margin-bottom:12px;">Règlement et piste d'audit immuable</h3>
+        <p>Les fonds sont libérés via le système bancaire central. Un enregistrement on-chain permanent et infalsifiable est créé — accessible aux régulateurs, auditeurs et équipes conformité en temps réel.</p>
+      </div>
+      <div class="card" style="border-color:var(--gold-border);background:linear-gradient(170deg,var(--navy-mid) 0%,var(--navy-light) 100%);">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:var(--gold);font-weight:700;margin-bottom:8px;">LE RÉSULTAT</div>
+        <h3 style="margin-bottom:12px;color:var(--gold);">La fraude de masse silencieuse devient mathématiquement impossible</h3>
+        <p>Un attaquant avec un accès complet à la base de données ne peut toujours pas falsifier de signatures cryptographiques. Les limites de vélocité des contrats arrêtent les retraits coordonnés avant qu'ils ne s'aggravent. La détection d'anomalies en temps réel signale les schémas inter-agences en quelques secondes — pas en heures.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-tag">Souveraineté des données</span>
+    <h2 style="margin-bottom:24px;">Zéro cryptomonnaie. Zéro frais de gas. <em>Zéro donnée client on-chain.</em></h2>
+    <p style="font-size:17px;color:var(--gray-light);max-width:720px;line-height:1.9;margin-bottom:48px;">
+      Ce n'est pas un projet crypto. Il n'y a ni token, ni coin, ni monnaie numérique, ni frais de transaction. La blockchain fonctionne comme une infrastructure de sécurité invisible — comme passer d'un registre papier à un registre infalsifiable.
+    </p>
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="margin-bottom:16px;color:var(--gold);">On-chain (réseau Besu)</h3>
+        <ul style="list-style:none;padding:0;font-size:15px;color:var(--gray-light);line-height:2;">
+          <li>✓&nbsp;&nbsp;Règles des contrats — limites, vélocité, multi-signature, logique de gel</li>
+          <li>✓&nbsp;&nbsp;Approbations cryptographiques des transactions</li>
+          <li>✓&nbsp;&nbsp;Journal d'audit immuable — qui, quoi, quand, quelle agence</li>
+          <li>✓&nbsp;&nbsp;Clés de signature des nœuds validateurs</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:16px;color:var(--gold);">Off-chain (banque centrale de données)</h3>
+        <ul style="list-style:none;padding:0;font-size:15px;color:var(--gray-light);line-height:2;">
+          <li>✓&nbsp;&nbsp;Comptes clients et soldes — restent dans Temenos / Flexcube / Finacle</li>
+          <li>✓&nbsp;&nbsp;Données KYC (noms, pièces d'identité, adresses) — jamais écrites on-chain</li>
+          <li>✓&nbsp;&nbsp;Règlement des fonds — via RTGS existant, correspondants, SWIFT</li>
+          <li>✓&nbsp;&nbsp;Interfaces client — GAB, mobile, TPE inchangés</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:15px;color:var(--gray);margin-top:24px;text-align:center;font-style:italic;">Pleine conformité RGPD et souveraineté des données. Les données personnelles des clients ne touchent jamais la blockchain.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-tag">Éprouvé en production</span>
+    <h2 style="margin-bottom:24px;">Le client blockchain choisi par les plus grandes institutions financières mondiales</h2>
+    <p style="font-size:17px;color:var(--gray-light);max-width:720px;line-height:1.9;margin-bottom:48px;">
+      Hyperledger Besu n'est pas une technologie expérimentale. Il est en production dans les banques centrales, les réseaux de règlement mondiaux et les institutions financières de premier rang sur tous les continents.
+    </p>
+    <div class="grid-2">
+      <div class="card" style="border-color:var(--gold-border);">
+        <h3 style="margin-bottom:12px;color:var(--gold);">Registre partagé SWIFT (2026)</h3>
+        <p>Le nouveau registre de règlement basé blockchain de SWIFT est construit sur Hyperledger Besu. Plus de 40 institutions ont collaboré à la conception — dont JP Morgan, HSBC, Deutsche Bank et Bank of America. Le MVP entre en production en 2026.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:12px;">Nigéria — CBDC eNaira</h3>
+        <p>La première CBDC d'Afrique. Les paiements de détail tournent sur Besu depuis octobre 2021 — preuve de la viabilité en production dans les contextes réglementaires et d'infrastructure d'Afrique de l'Ouest.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:12px;">Brésil — DREX</h3>
+        <p>Le projet CBDC de gros de la Banque Centrale du Brésil. Construit sur Hyperledger Besu comme épine dorsale de règlement.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:12px;">Indonésie — Digital Rupiah</h3>
+        <p>Projet Garuda : plus de 10 banques commerciales testent le règlement de gros sur Besu. Dirigé par Bank Indonesia.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:12px;">Citi Token Services</h3>
+        <p>La plateforme de dépôts tokenisés de Citi tourne sur une infrastructure Ethereum privée / Besu — déplaçant de vrais soldes institutionnels entre clients, 24h/24 7j/7.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:12px;">DTCC, Santander, Accenture</h3>
+        <p>Coprésident le Besu Financial Services Working Group — l'organe de gouvernance qui définit l'évolution de Besu pour les institutions financières régulées.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-tag">Pourquoi KalyRails Bank</span>
+    <h2 style="margin-bottom:48px;">Le bon partenaire pour l'infrastructure bancaire africaine</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon-box">&#127757;</div>
+        <h3>Éprouvé dans la banque africaine</h3>
+        <p>L'eNaira du Nigéria tourne sur Besu. Nous exploitons aujourd'hui des réseaux Besu PoA en production — pas dans un proof-of-concept, pas dans un laboratoire, mais au service de vrais utilisateurs.</p>
+      </div>
+      <div class="card">
+        <div class="icon-box">&#128273;</div>
+        <h3>Confidentialité à permissions (Tessera)</h3>
+        <p>Les groupes de transactions privées maintiennent les données sensibles confidentielles entre parties spécifiques tout en assurant une transparence d'audit complète pour les régulateurs et superviseurs.</p>
+      </div>
+      <div class="card">
+        <div class="icon-box">&#60;/&#62;</div>
+        <h3>Pleine compatibilité EVM</h3>
+        <p>Accès au plus grand écosystème de développeurs de contrats intelligents au monde. L'ensemble des outils Solidity, les bibliothèques OpenZeppelin et les workflows Hardhat fonctionnent nativement.</p>
+      </div>
+      <div class="card">
+        <div class="icon-box">&#9878;</div>
+        <h3>Alignement réglementaire BCEAO</h3>
+        <p>Gestion des permissions intégrée, points d'intégration KYC/AML et contrôles d'accès granulaires, conçus pour répondre aux exigences des banques centrales dans la zone UEMOA.</p>
+      </div>
+      <div class="card">
+        <div class="icon-box">&#8644;</div>
+        <h3>Intégration non disruptive</h3>
+        <p>S'intègre à votre déploiement Temenos, Flexcube ou Finacle existant. Pas de remplacement radical. Les clients ne voient aucun changement. Les flux des équipes restent inchangés.</p>
+      </div>
+      <div class="card">
+        <div class="icon-box">&#9881;</div>
+        <h3>Opérateur full-stack</h3>
+        <p>Nous exploitons une blockchain L1, un bridge cross-chain, un DEX, une DAO on-chain et un protocole de stablecoin en production. Ce n'est pas du conseil — c'est de l'expérience opérationnelle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-tag">Mise en œuvre</span>
+    <h2 style="margin-bottom:24px;">Du lancement à la production en <em>~8 semaines</em></h2>
+    <p style="font-size:17px;color:var(--gray-light);max-width:720px;line-height:1.9;margin-bottom:48px;">
+      Nos contrats intelligents — limites de retrait, contrôles de vélocité, multi-signature, gel/pause, journalisation d'audit — sont pré-construits, éprouvés et prêts à déployer. Nous ne les réécrivons pas à partir de zéro pour chaque projet. C'est pourquoi notre calendrier est une fraction de ce que proposent les projets blockchain d'entreprise traditionnels.
+    </p>
+    <div class="grid-2">
+      <div class="card">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:var(--gold);font-weight:700;letter-spacing:1.5px;">PHASE 1 · SEMAINES 1–2</div>
+        <h3 style="margin:10px 0 12px;">Évaluation et architecture</h3>
+        <p>Audit d'infrastructure, conception de la topologie réseau, placement des nœuds validateurs, cartographie des exigences d'intégration avec votre pile bancaire existante. Le rythme dépend principalement de la disponibilité de votre équipe.</p>
+      </div>
+      <div class="card">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:var(--gold);font-weight:700;letter-spacing:1.5px;">PHASE 2 · SEMAINE 3</div>
+        <h3 style="margin:10px 0 12px;">Déploiement réseau et intégration</h3>
+        <p>Le réseau Besu PoA devient opérationnel en 2 à 3 jours (IBFT 2.0, gestion des permissions, validateurs). Les contrats intelligents pré-construits sont paramétrés selon vos limites et politiques. Le reste de la semaine couvre l'intégration API avec le système bancaire central. Environnement de staging actif en fin de semaine.</p>
+      </div>
+      <div class="card">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:var(--gold);font-weight:700;letter-spacing:1.5px;">PHASE 3 · SEMAINES 4–5</div>
+        <h3 style="margin:10px 0 12px;">Tests et audit de sécurité</h3>
+        <p>Tests d'intrusion, tests de charge sur toutes les agences, audit indépendant des contrats intelligents, validation de la reprise après sinistre. Pas de mise en production sans validation par votre équipe et la nôtre.</p>
+      </div>
+      <div class="card">
+        <div style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:var(--gold);font-weight:700;letter-spacing:1.5px;">PHASE 4 · SEMAINES 6–8</div>
+        <h3 style="margin:10px 0 12px;">Déploiement progressif et formation</h3>
+        <p>Déploiement pilote d'agence, formation du personnel, tableaux de bord de surveillance, déploiement progressif à toutes les agences. Support 24h/24 7j/7 dès le premier jour du pilote.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:120px 0;text-align:center;position:relative;" id="contact">
+  <div style="position:absolute;bottom:0;left:0;right:0;height:300px;background:radial-gradient(ellipse 60% 80% at 50% 100%,rgba(245,158,11,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="container">
+    <h2 style="font-size:clamp(32px,4.5vw,48px);">Sécurisons <em>l'avenir de votre banque ensemble</em></h2>
+    <p style="font-size:18px;color:var(--gray-light);max-width:560px;margin:0 auto 40px;">Nous serions ravis de discuter de la manière dont un déploiement Hyperledger Besu privé peut protéger vos clients et votre réputation — par une équipe qui exploite cette infrastructure en production chaque jour.</p>
+    <a href="contact.html?type=banking" class="btn-primary" style="padding:18px 48px;font-size:17px;">Contacter les ventes</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="display:inline-block;margin-bottom:4px;">Kaly<span>Rails</span></a>
+        <p>Infrastructure blockchain privée pour fintechs et banques. Construite sur KalyChain.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="fintech.html">KalyRails L2</a>
+        <a href="banking.html">KalyRails Bank</a>
+        <a href="technology.html">Technologie</a>
+        <a href="integrate.html">Intégration</a>
+      </div>
+      <div class="footer-col">
+        <h4>Entreprise</h4>
+        <a href="about.html">À propos de KalyChain</a>
+        <a href="https://kalychain.io" target="_blank">KalyChain.io</a>
+        <a href="https://kalyssi.com" target="_blank">Kalyssi</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="contact.html">Nous contacter</a>
+        <a href="contact.html?type=banking">Contacter les ventes</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 <a href="https://kalychain.io">KalyChain</a>. KalyRails Bank déploie des réseaux Hyperledger Besu privés pour les institutions financières régulées.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
